@@ -7,6 +7,28 @@ list = [('1.','View all products'),('2.','Search for a product'),('3.','Add a ne
 for x,y in list:
     print(x,y,sep='\t')
 
+# Zadanie 2
+
+num_of_cars = 400
+num_of_parts = 1900
+cost_per_part = 40
+profit_per_car = 900
+
+cost_total = cost_per_part*num_of_parts
+total_revenue = profit_per_car*num_of_cars
+profit_margin = (total_revenue-cost_total)/total_revenue
+print(f'Marża zysku wynosi: {profit_margin*100:.3f}% a całkowity koszt wynosi: {cost_total:.3f}')
+
+# Zadanie 3
+
+flights = ['AA100','UA200','DL300', 'WN400']
+booked_flights = ['AA100', 'WN400']
+available_flighs = flights.copy()
+for x in booked_flights:
+    if x in available_flighs:
+        available_flighs.remove(x)
+print(available_flighs)
+
 # Zadanie 4
 
 indexes = [ 'WIG', 'WIG-banki', 'WIG-budownictwo', 'WIG-CEE', 'WIG-chemia', 'WIGenergia', 'WIG-ESG', 
@@ -19,12 +41,8 @@ for item in indexes:
     if '30' in item or '20' in item:
         print(item)
 
-num_of_cars = 400
-num_of_parts = 1900
-cost_per_part = 40
-profit_per_car = 900
-
 # Zadanie 5
+
 file = open('products.txt','r')
 lines = file.read().splitlines()
 for x in lines[1:len(lines)]:
@@ -60,4 +78,3 @@ with open('stock_prices.txt','w') as writer:
         writer.write(';')
         writer.write(str(stock_data[key]))
         writer.write('\n')
-        print(writer)
